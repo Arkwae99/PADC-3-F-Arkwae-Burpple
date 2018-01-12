@@ -1,0 +1,9 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="item_promotions_width">160dp</dimen>
+    <dimen name="item_promotions_height">180dp</dimen>
+    <dimen name="item_burpple_guide_width">150dp</dimen>
+    <dimen name="item_burpple_guide_height">150dp</dimen>
+    <dimen name="item_new_and_trending_width">160dp</dimen>
+    <dimen name="item_new_and_trending_height">200dp</dimen>
+</resources>

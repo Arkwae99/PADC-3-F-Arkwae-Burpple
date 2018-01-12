@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.padcmyanmar.burpple.viewitems.BackgroundInforImagesViewItem xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_food_images"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foreground="@android:drawable/screen_background_dark_transparent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/food_for_bg_info" />
+
+        <TextView
+            android:id="@+id/tv_feature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:background="@drawable/margin_text"
+            android:padding="8dp"
+            android:text="FEATURES"
+            android:textColor="#e23c5b"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_text_food_details_images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_feature"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/meteora"
+            android:text="BEST HIGHLIGHTS"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+</com.padcmyanmar.burpple.viewitems.BackgroundInforImagesViewItem>
