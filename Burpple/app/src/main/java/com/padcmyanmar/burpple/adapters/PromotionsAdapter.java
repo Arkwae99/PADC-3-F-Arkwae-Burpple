@@ -7,15 +7,26 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.padcmyanmar.burpple.R;
+import com.padcmyanmar.burpple.data.vo.PromotionVO;
 import com.padcmyanmar.burpple.viewholders.PromotionsViewHolder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Ag Phone Khant on 7/1/2018.
  */
 
-public class PromotionsAdapter extends RecyclerView.Adapter{
+public class PromotionsAdapter extends RecyclerView.Adapter<PromotionsViewHolder> {
+
+    private List<PromotionVO> mPromotionList;
+
+    public PromotionsAdapter() {
+        mPromotionList = new ArrayList<>();
+    }
+
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public PromotionsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context=parent.getContext();
         LayoutInflater inflater=LayoutInflater.from(context);
         View promotions = inflater.inflate(R.layout.item_promotions,parent,false);
@@ -24,12 +35,18 @@ public class PromotionsAdapter extends RecyclerView.Adapter{
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
+    public void onBindViewHolder(PromotionsViewHolder holder, int position) {
+        holder.setPromotion(mPromotionList.get(position));
     }
+
 
     @Override
     public int getItemCount() {
-        return 8;
+        return mPromotionList.size();
+    }
+
+    public void setPromotion(List<PromotionVO> promotionList) {
+        mPromotionList = promotionList;
+        notifyDataSetChanged();
     }
 }

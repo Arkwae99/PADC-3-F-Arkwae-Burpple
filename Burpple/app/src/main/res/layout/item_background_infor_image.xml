@@ -20,11 +20,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="160dp"
             android:background="@drawable/margin_text"
             android:padding="8dp"
             android:text="FEATURES"
-            android:textColor="#e23c5b"
+            android:textSize="16sp"
+            android:textColor="#45c9ed"
             android:textStyle="bold" />
 
         <TextView
@@ -33,9 +34,22 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_feature"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/meteora"
             android:text="BEST HIGHLIGHTS"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_text_food_details_images_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_text_food_details_images"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/meteora"
+            android:text="VERY DELICIOUS MEAL"
             android:textColor="#fff"
             android:textSize="20sp"
             android:textStyle="bold" />
