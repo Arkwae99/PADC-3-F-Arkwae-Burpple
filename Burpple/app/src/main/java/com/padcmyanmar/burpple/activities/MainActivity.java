@@ -1,6 +1,11 @@
 package com.padcmyanmar.burpple.activities;
 
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,9 +27,12 @@ import com.padcmyanmar.burpple.adapters.TrendingAdapter;
 import com.padcmyanmar.burpple.data.models.FeaturedModel;
 import com.padcmyanmar.burpple.data.models.GuideModel;
 import com.padcmyanmar.burpple.data.models.PromotionModel;
+import com.padcmyanmar.burpple.delegates.AfterLoginDelegate;
+import com.padcmyanmar.burpple.delegates.BeforeLoginDelegate;
 import com.padcmyanmar.burpple.events.LoadFeaturedEvent;
 import com.padcmyanmar.burpple.events.LoadGuideEvent;
 import com.padcmyanmar.burpple.events.LoadPromotionEvent;
+import com.padcmyanmar.burpple.view_pods.BeforeLoginViewPod;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -33,7 +41,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BeforeLoginDelegate {
 
     @BindView(R.id.tb_toolbar)
     Toolbar toolbar;
@@ -53,6 +61,14 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.rv_trending_venues)
     RecyclerView rvFoodTrendingVenues;
 
+    @BindView(R.id.navigation_view)
+    NavigationView navigationView;
+
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawerLayout;
+
+    private BeforeLoginViewPod vpBeforeLogin;
+
     private BackgroundInforImagesAdapter mBackgroundInforImagesAdapter;
     private PromotionsAdapter mPromotionsAdapter;
     private BurppleGuidesAdapter mBurppleGuidesAdapter;
@@ -66,6 +82,11 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this, this);
 
         setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
         mBackgroundInforImagesAdapter = new BackgroundInforImagesAdapter();
@@ -94,6 +115,9 @@ public class MainActivity extends AppCompatActivity {
         FeaturedModel.getsObjInstance().loadFeatured();
         PromotionModel.getsObjInstance().LoadPromotion();
         GuideModel.getsObjInstance().LoadGuide();
+
+        vpBeforeLogin = (BeforeLoginViewPod) navigationView.getHeaderView(0);
+        vpBeforeLogin.setDelegate(this);
     }
 
 
@@ -124,26 +148,41 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if (id == android.R.id.home) {
+            drawerLayout.openDrawer(GravityCompat.START);
         }
 
         return super.onOptionsItemSelected(item);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onFeaturedLoaded(LoadFeaturedEvent event){
-        Log.d(BurppleApp.LOG_TAG,"FeaturedLoaded"+event.getFeaturedList().size());
+    public void onFeaturedLoaded(LoadFeaturedEvent event) {
+        Log.d(BurppleApp.LOG_TAG, "FeaturedLoaded" + event.getFeaturedList().size());
         mBackgroundInforImagesAdapter.setFeatured(event.getFeaturedList());
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onPromotionLoaded(LoadPromotionEvent event){
-        Log.d(BurppleApp.LOG_TAG,"mmPromotionLoaded"+event.getPromotionList().size());
+    public void onPromotionLoaded(LoadPromotionEvent event) {
+        Log.d(BurppleApp.LOG_TAG, "mmPromotionLoaded" + event.getPromotionList().size());
         mPromotionsAdapter.setPromotion(event.getPromotionList());
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onGuideLoaded(LoadGuideEvent event){
-        Log.d(BurppleApp.LOG_TAG,"mmGuideLoaded"+event.getGuideList().size());
+    public void onGuideLoaded(LoadGuideEvent event) {
+        Log.d(BurppleApp.LOG_TAG, "mmGuideLoaded" + event.getGuideList().size());
         mBurppleGuidesAdapter.setGuide(event.getGuideList());
     }
+
+    @Override
+    public void onTapToLogin() {
+        Intent intent = AccountControlActivity.newIntentLogin(getApplicationContext());
+        startActivity(intent);
+    }
+
+    @Override
+    public void onTapToRegister() {
+        Intent intent = AccountControlActivity.newIntentRegister(getApplicationContext());
+        startActivity(intent);
+    }
+
 }

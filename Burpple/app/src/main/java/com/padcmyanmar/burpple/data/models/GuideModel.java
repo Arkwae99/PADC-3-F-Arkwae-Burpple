@@ -3,7 +3,6 @@ package com.padcmyanmar.burpple.data.models;
 
 import com.padcmyanmar.burpple.network.GuideDataAgent;
 import com.padcmyanmar.burpple.network.GuideRetrofitDataAgent;
-import com.padcmyanmar.burpple.network.PromotionDataAgent;
 
 /**
  * Created by Lenovo on 1/12/2018.
