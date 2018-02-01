@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.padcmyanmar.burpple.view_pods.BeforeLoginViewPod xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/user_profile_view_pod_height">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
 
         <ImageView
@@ -16,7 +12,7 @@
             android:src="@drawable/drawer_background" />
 
         <Button
-            android:id="@+id/btn_to_register"
+            android:id="@+id/btn_register"
             style="@style/accent_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,16 +22,15 @@
             android:text="@string/lbl_to_register" />
 
         <Button
-            android:id="@+id/btn_to_login"
+            android:id="@+id/btn_login"
             style="@style/accent_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/btn_to_register"
-            android:layout_alignRight="@id/btn_to_register"
+            android:layout_above="@id/btn_register"
+            android:layout_alignRight="@id/btn_register"
             android:text="@string/lbl_to_login" />
 
 
-    </RelativeLayout>
 
 
-</RelativeLayout>
+</com.padcmyanmar.burpple.view_pods.BeforeLoginViewPod>

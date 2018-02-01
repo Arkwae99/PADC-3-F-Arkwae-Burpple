@@ -7,7 +7,6 @@ import android.widget.RelativeLayout;
 
 
 import com.padcmyanmar.burpple.R;
-import com.padcmyanmar.burpple.activities.MainActivity;
 import com.padcmyanmar.burpple.delegates.BeforeLoginDelegate;
 
 import butterknife.ButterKnife;
@@ -36,7 +35,7 @@ public class BeforeLoginViewPod extends RelativeLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        ButterKnife.bind(this, this);
+        ButterKnife.bind(this,this);
     }
 
     public void setDelegate(BeforeLoginDelegate delegate) {
@@ -47,7 +46,7 @@ public class BeforeLoginViewPod extends RelativeLayout {
     public void onTapToLogin(View view){
         mDelegate.onTapToLogin();
     }
-    @OnClick(R.id.btn_logout)
+    @OnClick(R.id.btn_register)
     public void onTapToRegister(View view){
         mDelegate.onTapToRegister();
     }

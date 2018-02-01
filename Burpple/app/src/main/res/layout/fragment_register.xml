@@ -14,7 +14,7 @@
         android:gravity="center"
         android:text="Sign up form"
         android:textColor="@color/primary"
-        android:textSize="@dimen/text_regular_3x"
+        android:textSize="@dimen/text_heading_2x"
         android:textStyle="bold" />
 
 
@@ -46,7 +46,7 @@
                     android:inputType="text"
                     android:maxLines="1"
                     android:textColorHint="@color/accent"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/text_regular_3x"
                     android:textStyle="bold" />
 
             </android.support.design.widget.TextInputLayout>
@@ -71,7 +71,7 @@
                     android:inputType="text"
                     android:maxLines="1"
                     android:textColorHint="@color/accent"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/text_regular_3x"
                     android:textStyle="bold" />
 
             </android.support.design.widget.TextInputLayout>
@@ -96,7 +96,7 @@
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:textColorHint="@color/accent"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/text_regular_3x"
                     android:textStyle="bold" />
 
             </android.support.design.widget.TextInputLayout>
@@ -121,7 +121,7 @@
                     android:inputType="phone"
                     android:maxLines="1"
                     android:textColorHint="@color/accent"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/text_regular_3x"
                     android:textStyle="bold" />
 
             </android.support.design.widget.TextInputLayout>
@@ -146,7 +146,7 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:textColorHint="@color/accent"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/text_regular_3x"
                     android:textStyle="bold" />
 
             </android.support.design.widget.TextInputLayout>
@@ -171,7 +171,7 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:textColorHint="@color/accent"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/text_regular_3x"
                     android:textStyle="bold" />
 
             </android.support.design.widget.TextInputLayout>
@@ -187,7 +187,7 @@
                 android:foreground="@drawable/ripple_primary"
                 android:text="@string/lbl_agree_tc"
                 android:textColor="@color/full_white"
-                android:textSize="@dimen/text_regular" />
+                android:textSize="@dimen/text_regular_2x" />
 
             <Button
                 android:id="@+id/btn_sign_up"
@@ -200,6 +200,7 @@
                 android:background="@color/primary"
                 android:foreground="@drawable/ripple_white"
                 android:text="Sign Up"
+                android:textSize="@dimen/text_regular_3x"
                 android:textAllCaps="false"
                 android:textColor="#ffffff" />
 
