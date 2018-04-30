@@ -24,16 +24,15 @@ import okhttp3.Response;
 
 public class FeaturedOKHttpDataAgent implements FeaturedDataAgent {
 
-    private static  FeaturedOKHttpDataAgent sObjInstance;
+    private static FeaturedOKHttpDataAgent sObjInstance;
 
-    private FeaturedOKHttpDataAgent(){
+    private FeaturedOKHttpDataAgent() {
 
     }
 
-    public static FeaturedOKHttpDataAgent getsObjInstance(){
-        if(sObjInstance==null)
-        {
-            sObjInstance=new FeaturedOKHttpDataAgent();
+    public static FeaturedOKHttpDataAgent getsObjInstance() {
+        if (sObjInstance == null) {
+            sObjInstance = new FeaturedOKHttpDataAgent();
         }
         return sObjInstance;
     }
@@ -43,7 +42,7 @@ public class FeaturedOKHttpDataAgent implements FeaturedDataAgent {
         new LoadFeaturedTask().execute("http://padcmyanmar.com/padc-3/burpple-food-places/apis/v1/getFeatured.php");
     }
 
-    private static class LoadFeaturedTask extends AsyncTask<String,Void,String> {
+    private static class LoadFeaturedTask extends AsyncTask<String, Void, String> {
 
         @Override
         protected String doInBackground(String... urls) {
@@ -65,7 +64,7 @@ public class FeaturedOKHttpDataAgent implements FeaturedDataAgent {
                     .post(formBody)
                     .build();
 
-            String responseString=null;
+            String responseString = null;
             try {
                 Response response = httpClient.newCall(request).execute(); //4
                 if (response.isSuccessful() && response.body() != null) {
@@ -83,11 +82,11 @@ public class FeaturedOKHttpDataAgent implements FeaturedDataAgent {
         protected void onPostExecute(String response) {
             super.onPostExecute(response);
 
-            Gson gson=new Gson();
-            GetFeaturedResponse getFeaturedResponse=gson. fromJson(response, GetFeaturedResponse.class);
+            Gson gson = new Gson();
+            GetFeaturedResponse getFeaturedResponse = gson.fromJson(response, GetFeaturedResponse.class);
 
-            LoadFeaturedEvent event=new LoadFeaturedEvent(getFeaturedResponse.getFeatured());
-            EventBus eventBus=EventBus.getDefault();
+            LoadFeaturedEvent event = new LoadFeaturedEvent(getFeaturedResponse.getFeatured());
+            EventBus eventBus = EventBus.getDefault();
             eventBus.post(event);
         }
     }

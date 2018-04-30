@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
  * Created by Ag Phone Khant on 7/1/2018.
  */
 
-public class PromotionsViewHolder extends RecyclerView.ViewHolder{
+public class PromotionsViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.iv_food_promotions)
     ImageView ivFoodPromotion;
 
@@ -36,13 +36,12 @@ public class PromotionsViewHolder extends RecyclerView.ViewHolder{
     TextView tvPromotionShopArea;
 
 
-
     public PromotionsViewHolder(View itemView) {
         super(itemView);
-        ButterKnife.bind(this,itemView);
+        ButterKnife.bind(this, itemView);
     }
 
-    public void setPromotion(PromotionVO promotion){
+    public void setPromotion(PromotionVO promotion) {
         tvOneForOne.setText(promotion.getPromotionTitle());
         tvPromotionEndDate.setText(promotion.getPromotionUntil());
         tvPromotionShopName.setText(promotion.getPromotionShop().getPromotionShopName());

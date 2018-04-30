@@ -19,7 +19,7 @@ public class TrendingAdapter extends RecyclerView.Adapter {
         Context context = parent.getContext();
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View foodTrendingVenues = layoutInflater.inflate(R.layout.item_trending, parent, false);
-        TrendingViewHolder trendingViewHolder= new TrendingViewHolder(foodTrendingVenues);
+        TrendingViewHolder trendingViewHolder = new TrendingViewHolder(foodTrendingVenues);
         return trendingViewHolder;
     }
 

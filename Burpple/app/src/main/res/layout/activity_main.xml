@@ -366,5 +366,5 @@
         android:layout_width="320dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/view_pod_before_login"/>
+        app:headerLayout="@layout/view_pod_before_login" />
 </android.support.v4.widget.DrawerLayout>

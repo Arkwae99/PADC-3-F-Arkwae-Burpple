@@ -35,19 +35,20 @@ public class BeforeLoginViewPod extends RelativeLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        ButterKnife.bind(this,this);
+        ButterKnife.bind(this, this);
     }
 
     public void setDelegate(BeforeLoginDelegate delegate) {
-      mDelegate = delegate;
+        mDelegate = delegate;
     }
 
     @OnClick(R.id.btn_login)
-    public void onTapToLogin(View view){
+    public void onTapToLogin(View view) {
         mDelegate.onTapToLogin();
     }
+
     @OnClick(R.id.btn_register)
-    public void onTapToRegister(View view){
+    public void onTapToRegister(View view) {
         mDelegate.onTapToRegister();
     }
 }

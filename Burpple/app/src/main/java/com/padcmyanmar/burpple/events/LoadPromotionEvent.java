@@ -13,11 +13,11 @@ public class LoadPromotionEvent {
 
     private List<PromotionVO> promotionList;
 
-    public LoadPromotionEvent(List<PromotionVO> promotionList){
-        this.promotionList=promotionList;
+    public LoadPromotionEvent(List<PromotionVO> promotionList) {
+        this.promotionList = promotionList;
     }
 
-    public List<PromotionVO> getPromotionList(){
+    public List<PromotionVO> getPromotionList() {
         return promotionList;
     }
 }

@@ -15,5 +15,5 @@ public interface GuideApi {
     @FormUrlEncoded
     @POST("getGuides.php")
     Call<GetGuideResponse> getGuide(@Field("page") int page,
-                                        @Field("access_token") String accessToken);
+                                    @Field("access_token") String accessToken);
 }

@@ -29,23 +29,23 @@ public class GuideOKHttpDataAgent implements PromotionDataAgent {
 
     private static GuideOKHttpDataAgent sObjInstance;
 
-    private GuideOKHttpDataAgent(){
+    private GuideOKHttpDataAgent() {
 
     }
 
-    public static GuideOKHttpDataAgent getsObjInstance(){
-        if(sObjInstance==null)
-        {
-            sObjInstance=new GuideOKHttpDataAgent();
+    public static GuideOKHttpDataAgent getsObjInstance() {
+        if (sObjInstance == null) {
+            sObjInstance = new GuideOKHttpDataAgent();
         }
         return sObjInstance;
     }
+
     @Override
     public void loadPromotion() {
         new LoadGuideTask().execute("http://padcmyanmar.com/padc-3/burpple-food-places/apis/v1/getGuides.php");
     }
 
-    private static class LoadGuideTask extends AsyncTask<String,Void,String> {
+    private static class LoadGuideTask extends AsyncTask<String, Void, String> {
 
         @Override
         protected String doInBackground(String... urls) {

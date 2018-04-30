@@ -14,15 +14,15 @@
             android:src="@drawable/trending_roast_turkey"
 
             />
+
         <TextView
             android:id="@+id/tv_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Roasted Turkey"
             android:layout_marginLeft="52dp"
             android:layout_marginTop="8dp"
-            android:textColor="#0b0b0b"
-            />
+            android:text="Roasted Turkey"
+            android:textColor="#0b0b0b" />
     </FrameLayout>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -14,13 +14,13 @@ public class FeaturedVO {
     @SerializedName("burpple-featured-image")
     private String featureImage;
 
-    @SerializedName( "burpple-featured-title")
+    @SerializedName("burpple-featured-title")
     private String featureTitle;
 
     @SerializedName("burpple-featured-desc")
     private String featureDescription;
 
-    @SerializedName( "burpple-featured-tag")
+    @SerializedName("burpple-featured-tag")
     private String featureTag;
 
 
@@ -43,7 +43,6 @@ public class FeaturedVO {
     public String getFeatureTag() {
         return featureTag;
     }
-
 
 
 }

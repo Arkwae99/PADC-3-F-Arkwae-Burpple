@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/night_sky_bg">
+    android:background="@drawable/night_sky_bg"
+    android:orientation="vertical">
 
 
     <TextView
@@ -200,9 +200,9 @@
                 android:background="@color/primary"
                 android:foreground="@drawable/ripple_white"
                 android:text="Sign Up"
-                android:textSize="@dimen/text_regular_3x"
                 android:textAllCaps="false"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:textSize="@dimen/text_regular_3x" />
 
             <View
                 android:layout_width="match_parent"

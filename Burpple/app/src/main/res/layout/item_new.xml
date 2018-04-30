@@ -12,17 +12,17 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/food_new"
-            
+
             />
+
         <TextView
             android:id="@+id/tv_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chinese Noodle"
             android:layout_marginLeft="52dp"
             android:layout_marginTop="8dp"
-            android:textColor="#0b0b0b"
-            />
+            android:text="Chinese Noodle"
+            android:textColor="#0b0b0b" />
     </FrameLayout>
 
 </android.support.design.widget.CoordinatorLayout>

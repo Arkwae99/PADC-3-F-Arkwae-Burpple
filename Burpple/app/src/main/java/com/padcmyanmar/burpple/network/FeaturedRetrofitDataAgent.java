@@ -25,7 +25,7 @@ public class FeaturedRetrofitDataAgent implements FeaturedDataAgent {
 
     private FeaturedApi featuredApi;
 
-    private FeaturedRetrofitDataAgent(){
+    private FeaturedRetrofitDataAgent() {
 
         OkHttpClient httpClient = new OkHttpClient.Builder() //1
                 .connectTimeout(15, TimeUnit.SECONDS)
@@ -33,31 +33,32 @@ public class FeaturedRetrofitDataAgent implements FeaturedDataAgent {
                 .readTimeout(60, TimeUnit.SECONDS)
                 .build();
 
-        Retrofit retrofit=new Retrofit.Builder() //2
+        Retrofit retrofit = new Retrofit.Builder() //2
                 .baseUrl("http://padcmyanmar.com/padc-3/burpple-food-places/apis/v1/")
                 .addConverterFactory(GsonConverterFactory.create(new Gson()))
                 .client(httpClient)
                 .build();
 
-       featuredApi=retrofit.create(FeaturedApi.class);
+        featuredApi = retrofit.create(FeaturedApi.class);
     }
 
-    public static FeaturedRetrofitDataAgent getsObjInstance(){
-        if(sObjInstance==null){
-            sObjInstance=new FeaturedRetrofitDataAgent();
+    public static FeaturedRetrofitDataAgent getsObjInstance() {
+        if (sObjInstance == null) {
+            sObjInstance = new FeaturedRetrofitDataAgent();
         }
         return sObjInstance;
     }
+
     @Override
     public void loadFeatured() {
 
-        final Call<GetFeaturedResponse> getFeaturedResponseCall=featuredApi.getFeatured(1,"b002c7e1a528b7cb460933fc2875e916");
+        final Call<GetFeaturedResponse> getFeaturedResponseCall = featuredApi.getFeatured(1, "b002c7e1a528b7cb460933fc2875e916");
 
         getFeaturedResponseCall.enqueue(new Callback<GetFeaturedResponse>() {
             @Override
             public void onResponse(Call<GetFeaturedResponse> call, Response<GetFeaturedResponse> response) {
-                GetFeaturedResponse getFeaturedResponse=response.body();
-                if(getFeaturedResponse!=null) {
+                GetFeaturedResponse getFeaturedResponse = response.body();
+                if (getFeaturedResponse != null) {
                     LoadFeaturedEvent event = new LoadFeaturedEvent(getFeaturedResponse.getFeatured());
                     EventBus.getDefault().post(event);
                 }

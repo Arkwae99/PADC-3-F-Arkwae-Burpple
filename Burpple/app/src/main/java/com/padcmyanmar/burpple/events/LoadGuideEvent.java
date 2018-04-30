@@ -13,11 +13,11 @@ public class LoadGuideEvent {
 
     private List<GuideVO> guideList;
 
-    public LoadGuideEvent(List<GuideVO> guideList){
-        this.guideList=guideList;
+    public LoadGuideEvent(List<GuideVO> guideList) {
+        this.guideList = guideList;
     }
 
-    public List<GuideVO> getGuideList(){
+    public List<GuideVO> getGuideList() {
         return guideList;
     }
 }

@@ -13,11 +13,11 @@ public class LoadFeaturedEvent {
 
     private List<FeaturedVO> featuredList;
 
-    public LoadFeaturedEvent(List<FeaturedVO> featuredList){
-        this.featuredList=featuredList;
+    public LoadFeaturedEvent(List<FeaturedVO> featuredList) {
+        this.featuredList = featuredList;
     }
 
-    public List<FeaturedVO> getFeaturedList(){
+    public List<FeaturedVO> getFeaturedList() {
         return featuredList;
     }
 }

@@ -24,8 +24,8 @@
             android:background="@drawable/margin_text"
             android:padding="8dp"
             android:text="FEATURES"
-            android:textSize="16sp"
             android:textColor="#45c9ed"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView

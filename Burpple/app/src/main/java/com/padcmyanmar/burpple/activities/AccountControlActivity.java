@@ -24,13 +24,13 @@ public class AccountControlActivity extends AppCompatActivity {
     public static final int SCREEN_TYPE_LOGIN = 1;
     public static final int SCREEN_TYPE_REGISTER = 2;
 
-    public static  Intent newIntentLogin(Context context) {
+    public static Intent newIntentLogin(Context context) {
         Intent intent = new Intent(context, AccountControlActivity.class);
         intent.putExtra(IE_SCREEN_TYPE, SCREEN_TYPE_LOGIN);
         return intent;
     }
 
-    public static  Intent newIntentRegister(Context context) {
+    public static Intent newIntentRegister(Context context) {
         Intent intent = new Intent(context, AccountControlActivity.class);
         intent.putExtra(IE_SCREEN_TYPE, SCREEN_TYPE_REGISTER);
         return intent;

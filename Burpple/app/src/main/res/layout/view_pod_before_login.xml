@@ -4,33 +4,31 @@
     android:layout_height="@dimen/user_profile_view_pod_height">
 
 
-        <ImageView
-            android:id="@+id/iv_bg_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/drawer_background" />
+    <ImageView
+        android:id="@+id/iv_bg_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/drawer_background" />
 
-        <Button
-            android:id="@+id/btn_register"
-            style="@style/accent_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_margin="@dimen/margin_medium_2"
-            android:text="@string/lbl_to_register" />
+    <Button
+        android:id="@+id/btn_register"
+        style="@style/accent_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/margin_medium_2"
+        android:text="@string/lbl_to_register" />
 
-        <Button
-            android:id="@+id/btn_login"
-            style="@style/accent_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/btn_register"
-            android:layout_alignRight="@id/btn_register"
-            android:text="@string/lbl_to_login" />
-
-
+    <Button
+        android:id="@+id/btn_login"
+        style="@style/accent_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_register"
+        android:layout_alignRight="@id/btn_register"
+        android:text="@string/lbl_to_login" />
 
 
 </com.padcmyanmar.burpple.view_pods.BeforeLoginViewPod>

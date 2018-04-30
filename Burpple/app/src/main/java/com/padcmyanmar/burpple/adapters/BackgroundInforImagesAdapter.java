@@ -38,9 +38,10 @@ public class BackgroundInforImagesAdapter extends PagerAdapter {
 
     private List<FeaturedVO> mFeaturedList;
 
-    public BackgroundInforImagesAdapter(){
-        mFeaturedList=new ArrayList<>();
+    public BackgroundInforImagesAdapter() {
+        mFeaturedList = new ArrayList<>();
     }
+
     @Override
     public int getCount() {
         return mFeaturedList.size();
@@ -56,7 +57,7 @@ public class BackgroundInforImagesAdapter extends PagerAdapter {
         Context context = container.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         BackgroundInforImagesViewItem view = (BackgroundInforImagesViewItem) inflater.inflate(R.layout.item_background_infor_image, container, false);
-        ButterKnife.bind(this,view);
+        ButterKnife.bind(this, view);
 
         tvFeatures.setText(mFeaturedList.get(position).getFeatureTag());
         tvTextFoodImg.setText(mFeaturedList.get(position).getFeatureTitle());
@@ -75,6 +76,7 @@ public class BackgroundInforImagesAdapter extends PagerAdapter {
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((View) object);
     }
+
     public void setFeatured(List<FeaturedVO> featuredList) {
         mFeaturedList = featuredList;
         notifyDataSetChanged();

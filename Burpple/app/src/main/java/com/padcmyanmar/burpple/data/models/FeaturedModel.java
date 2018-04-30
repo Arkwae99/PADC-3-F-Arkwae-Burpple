@@ -14,20 +14,19 @@ public class FeaturedModel {
 
     private static FeaturedModel sObjInstance;
 
-    private FeaturedModel(){
-            //mFeaturedDataAgent= FeaturedOKHttpDataAgent.getsObjInstance();
-        mFeaturedDataAgent= FeaturedRetrofitDataAgent.getsObjInstance();
+    private FeaturedModel() {
+        //mFeaturedDataAgent= FeaturedOKHttpDataAgent.getsObjInstance();
+        mFeaturedDataAgent = FeaturedRetrofitDataAgent.getsObjInstance();
     }
 
-    public static FeaturedModel getsObjInstance(){
-        if(sObjInstance==null)
-        {
-            sObjInstance=new FeaturedModel();
+    public static FeaturedModel getsObjInstance() {
+        if (sObjInstance == null) {
+            sObjInstance = new FeaturedModel();
         }
         return sObjInstance;
     }
 
-    public void loadFeatured(){
+    public void loadFeatured() {
         mFeaturedDataAgent.loadFeatured();
     }
 }

@@ -22,4 +22,4 @@ public class BackgroundInforImagesViewItem extends FrameLayout {
     public BackgroundInforImagesViewItem(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
-    }
+}

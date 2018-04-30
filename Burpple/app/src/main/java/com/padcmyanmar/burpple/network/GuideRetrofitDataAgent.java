@@ -27,7 +27,7 @@ public class GuideRetrofitDataAgent implements GuideDataAgent {
 
     private GuideApi guideApi;
 
-    private GuideRetrofitDataAgent(){
+    private GuideRetrofitDataAgent() {
 
         OkHttpClient httpClient = new OkHttpClient.Builder() //1
                 .connectTimeout(15, TimeUnit.SECONDS)
@@ -35,32 +35,32 @@ public class GuideRetrofitDataAgent implements GuideDataAgent {
                 .readTimeout(60, TimeUnit.SECONDS)
                 .build();
 
-        Retrofit retrofit=new Retrofit.Builder() //2
+        Retrofit retrofit = new Retrofit.Builder() //2
                 .baseUrl("http://padcmyanmar.com/padc-3/burpple-food-places/apis/v1/")
                 .addConverterFactory(GsonConverterFactory.create(new Gson()))
                 .client(httpClient)
                 .build();
 
-        guideApi=retrofit.create(GuideApi.class);
+        guideApi = retrofit.create(GuideApi.class);
     }
 
-    public static GuideRetrofitDataAgent getsObjInstance(){
-        if(sObjInstance==null)
-        {
-            sObjInstance=new GuideRetrofitDataAgent();
+    public static GuideRetrofitDataAgent getsObjInstance() {
+        if (sObjInstance == null) {
+            sObjInstance = new GuideRetrofitDataAgent();
         }
         return sObjInstance;
     }
+
     @Override
     public void loadGuide() {
 
-        Call<GetGuideResponse> getGuideResponseCall=guideApi.getGuide(1,"b002c7e1a528b7cb460933fc2875e916");
+        Call<GetGuideResponse> getGuideResponseCall = guideApi.getGuide(1, "b002c7e1a528b7cb460933fc2875e916");
 
         getGuideResponseCall.enqueue(new Callback<GetGuideResponse>() {
             @Override
             public void onResponse(Call<GetGuideResponse> call, Response<GetGuideResponse> response) {
-                GetGuideResponse getGuideResponse=response.body();
-                if(getGuideResponse!=null) {
+                GetGuideResponse getGuideResponse = response.body();
+                if (getGuideResponse != null) {
                     LoadGuideEvent event = new LoadGuideEvent(getGuideResponse.getFeatured());
                     EventBus.getDefault().post(event);
                 }
@@ -70,7 +70,6 @@ public class GuideRetrofitDataAgent implements GuideDataAgent {
             public void onFailure(Call<GetGuideResponse> call, Throwable t) {
 
             }
-
 
 
         });

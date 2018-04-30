@@ -25,7 +25,7 @@ public class PromotionRetrofitDataAgent implements PromotionDataAgent {
 
     private PromotionApi promotionApi;
 
-    private PromotionRetrofitDataAgent(){
+    private PromotionRetrofitDataAgent() {
 
         OkHttpClient httpClient = new OkHttpClient.Builder() //1
                 .connectTimeout(15, TimeUnit.SECONDS)
@@ -33,33 +33,33 @@ public class PromotionRetrofitDataAgent implements PromotionDataAgent {
                 .readTimeout(60, TimeUnit.SECONDS)
                 .build();
 
-        Retrofit retrofit=new Retrofit.Builder() //2
+        Retrofit retrofit = new Retrofit.Builder() //2
                 .baseUrl("http://padcmyanmar.com/padc-3/burpple-food-places/apis/v1/")
                 .addConverterFactory(GsonConverterFactory.create(new Gson()))
                 .client(httpClient)
                 .build();
 
-        promotionApi=retrofit.create(PromotionApi.class);
+        promotionApi = retrofit.create(PromotionApi.class);
 
     }
 
-    public static PromotionRetrofitDataAgent getsObjInstance(){
-        if(sObjInstance==null)
-        {
-            sObjInstance=new PromotionRetrofitDataAgent();
+    public static PromotionRetrofitDataAgent getsObjInstance() {
+        if (sObjInstance == null) {
+            sObjInstance = new PromotionRetrofitDataAgent();
         }
         return sObjInstance;
     }
+
     @Override
     public void loadPromotion() {
 
-        Call<GetPromotionResponse> getPromotionResponseCall=promotionApi.getPromotions(1,"b002c7e1a528b7cb460933fc2875e916");
+        Call<GetPromotionResponse> getPromotionResponseCall = promotionApi.getPromotions(1, "b002c7e1a528b7cb460933fc2875e916");
 
         getPromotionResponseCall.enqueue(new Callback<GetPromotionResponse>() {
             @Override
             public void onResponse(Call<GetPromotionResponse> call, Response<GetPromotionResponse> response) {
-                GetPromotionResponse getPromotionResponse=response.body();
-                if(getPromotionResponse!=null) {
+                GetPromotionResponse getPromotionResponse = response.body();
+                if (getPromotionResponse != null) {
                     LoadPromotionEvent event = new LoadPromotionEvent(getPromotionResponse.getPromotions());
                     EventBus.getDefault().post(event);
                 }

@@ -5,6 +5,6 @@ package com.padcmyanmar.burpple;
  */
 
 public class BurppleApp {
-    public static final String LOG_TAG="BurppleApp";
+    public static final String LOG_TAG = "BurppleApp";
 }
 

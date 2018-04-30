@@ -14,21 +14,20 @@ public class PromotionModel {
 
     private static PromotionModel sObjInstance;
 
-    private PromotionModel(){
+    private PromotionModel() {
 
         //sPromotionDataAgent= PromotionOKHttpDataAgent.getsObjInstance();
-        sPromotionDataAgent= PromotionRetrofitDataAgent.getsObjInstance();
+        sPromotionDataAgent = PromotionRetrofitDataAgent.getsObjInstance();
     }
 
-    public static PromotionModel getsObjInstance(){
-        if(sObjInstance==null)
-        {
-            sObjInstance=new PromotionModel();
+    public static PromotionModel getsObjInstance() {
+        if (sObjInstance == null) {
+            sObjInstance = new PromotionModel();
         }
         return sObjInstance;
     }
 
-    public void LoadPromotion(){
+    public void LoadPromotion() {
         sPromotionDataAgent.loadPromotion();
     }
 }

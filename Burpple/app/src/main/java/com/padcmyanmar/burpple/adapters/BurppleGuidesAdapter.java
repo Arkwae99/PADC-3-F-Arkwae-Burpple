@@ -21,14 +21,15 @@ public class BurppleGuidesAdapter extends RecyclerView.Adapter<BurppleGuidesView
     private List<GuideVO> mGuideList;
 
     public BurppleGuidesAdapter() {
-        mGuideList= new ArrayList<>();
+        mGuideList = new ArrayList<>();
     }
+
     @Override
     public BurppleGuidesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Context context=parent.getContext();
-        LayoutInflater inflater=LayoutInflater.from(context);
-        View guideItemView=inflater.inflate(R.layout.item_burpple_guides,parent,false);
-        BurppleGuidesViewHolder guideItemViewHolder=new BurppleGuidesViewHolder(guideItemView);
+        Context context = parent.getContext();
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View guideItemView = inflater.inflate(R.layout.item_burpple_guides, parent, false);
+        BurppleGuidesViewHolder guideItemViewHolder = new BurppleGuidesViewHolder(guideItemView);
         return guideItemViewHolder;
     }
 
@@ -42,6 +43,7 @@ public class BurppleGuidesAdapter extends RecyclerView.Adapter<BurppleGuidesView
     public int getItemCount() {
         return mGuideList.size();
     }
+
     public void setGuide(List<GuideVO> guideList) {
         mGuideList = guideList;
         notifyDataSetChanged();

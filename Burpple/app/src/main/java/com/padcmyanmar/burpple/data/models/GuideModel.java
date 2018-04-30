@@ -14,21 +14,20 @@ public class GuideModel {
 
     private static GuideModel sObjInstance;
 
-    private GuideModel(){
+    private GuideModel() {
 
         //sPromotionDataAgent= GuideOKHttpDataAgent.getsObjInstance();
-        sGuideDataAgent= GuideRetrofitDataAgent.getsObjInstance();
+        sGuideDataAgent = GuideRetrofitDataAgent.getsObjInstance();
     }
 
-    public static GuideModel getsObjInstance(){
-        if(sObjInstance==null)
-        {
-            sObjInstance=new GuideModel();
+    public static GuideModel getsObjInstance() {
+        if (sObjInstance == null) {
+            sObjInstance = new GuideModel();
         }
         return sObjInstance;
     }
 
-    public void LoadGuide(){
+    public void LoadGuide() {
         sGuideDataAgent.loadGuide();
     }
 }
